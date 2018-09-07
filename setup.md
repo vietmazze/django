@@ -32,7 +32,12 @@
    - return HttpResponse("Hello, world. You're at the polls index.")
 3. In order to link views,  we need to map it to a URL - and for this we need a URLconf.   
    - create a new urls.py
-   - `from django.urls import path
-   - from . import views
-   - urlpatterns = [path('', views.index, name='index'),]`
+   - `from django.urls import path`
+   - `from . import views`
+   - `urlpatterns = [path('', views.index, name='index'),]`
+4. Also need to point link to root URLs, mysite/urls.py
+    - urlpatterns = [
+    - path('polls/', include('polls.urls')),
+    - path('admin/', admin.site.urls),]
+
    
