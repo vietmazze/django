@@ -26,7 +26,13 @@
     tests.py
     views.py
     
-2. polls/views.py
+2. polls/views.py : What the website will show 
    - from django.http import HttpResponse
    - def index(request):
    - return HttpResponse("Hello, world. You're at the polls index.")
+3. In order to link views,  we need to map it to a URL - and for this we need a URLconf.   
+   - create a new urls.py
+   - `from django.urls import path
+   - from . import views
+   - urlpatterns = [path('', views.index, name='index'),]`
+   
