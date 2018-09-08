@@ -53,6 +53,43 @@
     -   ` 'PASSWORD': 'HIGHpoint-123',`
     -    `'HOST':'localhost',`
     -   ` 'PORT':'',`
+2. Migrate data: `python manage.py migrate` 
+    - Need to create database tables by migration
+3. Creating models: Essentially a database layout, what columns, rows etc.. will be in your database.
+    - from django.db import models
+    - class Question(models.Model):
+    - question_text = models.CharField(max_length=200)
+    - pub_date = models.DateTimeField('date published')
+ 4. Activating Models
+    - Go in mysite/settings.py and add in the class created by polls/apps.py 
+    - INSTALLED_APPS =
+    - 'polls.apps.PollsConfig',
+    - 'django.contrib.admin',
+ 5. Cont Activation
+    - python manage.py makemigrations polls ( Tell django you have made changes to models)
+    -  python manage.py sqlmigrate polls 0001 ( To check your database as you wanted in SQL)
+    - python manage.py migrate ( Do it again to create the models changes to database)
+ 6. Playing with the API
+    - python manage.py shell
+    - From here you can play around with the database you created
+    ->>> from polls.models import Choice, Question  # Import the model classes we just wrote.
 
+# No questions are in the system yet.
+>>> Question.objects.all()
+<QuerySet []>
+
+# Create a new Question.
+# Support for time zones is enabled in the default settings file, so
+# Django expects a datetime with tzinfo for pub_date. Use timezone.now()
+# instead of datetime.datetime.now() and it will do the right thing.
+>>> from django.utils import timezone
+>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+
+# Save the object into the database. You have to call save() explicitly.
+>>> q.save()
+
+# Now it has an ID.
+>>> q.id
+    
 
    
