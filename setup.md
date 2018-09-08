@@ -106,4 +106,7 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 >>> Question.objects.all()
 <QuerySet [<Question: Question object (1)>]>```
 
+7. Creating an admin user
+    - python manage.py createsuperuser
+    -Start the server and go in admin section http://127.0.0.1:8000/admin/
    
