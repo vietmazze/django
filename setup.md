@@ -40,4 +40,19 @@
     - path('polls/', include('polls.urls')),
     - path('admin/', admin.site.urls),]
 
+
+### Setting up Database/ Admin
+1. Database setup in mysite/settings.py, we must include the database we wanted to work in this case Postresql. 
+    - Set up database through Postsql `createdb [OPTION][NAME]` and install connector psycopg2 
+    - Make sure to add in username/host/ etc on settings.py so they are connected
+    - `DATABASES = {`
+    -  `'default': {`
+    -   ` 'ENGINE': 'django.db.backends.postgresql_psycopg2',`
+    -   ` 'NAME': 'poll_django',`
+    -   ` 'USER': 'postgres',`
+    -   ` 'PASSWORD': 'HIGHpoint-123',`
+    -    `'HOST':'localhost',`
+    -   ` 'PORT':'',`
+
+
    
