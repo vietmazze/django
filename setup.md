@@ -104,7 +104,8 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 
 # objects.all() displays all the questions in the database.
 >>> Question.objects.all()
-<QuerySet [<Question: Question object (1)>]>```
+<QuerySet [<Question: Question object (1)>]> 
+```
 
 7. Creating an admin user
     - python manage.py createsuperuser
