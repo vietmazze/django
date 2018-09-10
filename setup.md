@@ -110,4 +110,27 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 7. Creating an admin user
     - python manage.py createsuperuser
     -Start the server and go in admin section http://127.0.0.1:8000/admin/
+    
+### Templates: 
+1. Templates is use with views to show the html side of django.
+ 
+```{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">
+      Welcome to my awesome homepage.
+    </p>
+{% endblock %}
+```
+
+    - {% ... %} for Statements like for loop
+    - {{ ... }} for Expressions like str, tuples
+    - The href attribute specifies the link's destination: <a href="https://www.w3schools.com">Visit W3Schools</a>
    
