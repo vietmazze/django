@@ -105,12 +105,29 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 # objects.all() displays all the questions in the database.
 >>> Question.objects.all()
 <QuerySet [<Question: Question object (1)>]> 
+# Create a new object
+ Question.objects.create( author = me, title = 'Sample title', text = 'Text')
+ #Filter object by me
+ Question.objects.filter(author = me)
+ # Two underscore represent a fieldname(title) and an operation(contains/filter)
+ Question.objects.filter(title__contains ='title')  
+ # To publish
+ Question.publish() or p.save() 
+ 
 ```
 
 7. Creating an admin user
     - python manage.py createsuperuser
     -Start the server and go in admin section http://127.0.0.1:8000/admin/
+### Views.py
+``` from django.shortcuts import render
+    from django.utils import timezone
+    from .models import Post # Import your models here for database to work
     
+    def post_list(request): # request is what we receieve from user
+        post = Post.objects.filter( title__contains ='title)
+        return render(request, 'blog/post_list.html', {'post':posts})  # post:post is what going to be sent to template
+```
 ### Templates: 
 1. Templates is use with views to show the html side of django.
  
