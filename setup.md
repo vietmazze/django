@@ -151,3 +151,8 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
     - {{ ... }} for Expressions like str, tuples
     - The href attribute specifies the link's destination: <a href="https://www.w3schools.com">Visit W3Schools</a>
    
+### Models: 
+   - (auto_now_add = True) automatically add/update the specific variable when save() is run.
+   -`python manage.py check` before migration to check models.py is correct
+   - After create your model, use `python manage.py makemigrations blog` to update 
+        - It creates a file  0001_initial.py on migrations folder, This migration file reflects the current state of our models. Check it out.
