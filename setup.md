@@ -156,3 +156,7 @@ datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
    -`python manage.py check` before migration to check models.py is correct
    - After create your model, use `python manage.py makemigrations blog` to update 
         - It creates a file  0001_initial.py on migrations folder, This migration file reflects the current state of our models. Check it out.
+   - `python manage.py sqlmigrate blog 0001` to check out what you have created
+   -` python manage.py migrate` to save the changes to database.
+   - When you make changes to models.py, you can update it by running makemigration/migrate.
+   - If in case you made changes but end up wanting to revert back to the original, use `python manage.py migrate blog 0001` where `0001` is the number of the first update.
